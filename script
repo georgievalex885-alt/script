@@ -1,22 +1,4 @@
--- 1. Свързване с библиотеката на KeyAuth
-local keyauth_link = "https://githubusercontent.com"
-local KeyAuthAPI = loadstring(game:HttpGet(keyauth_link))()
 
-local KeyAuthApp = KeyAuthAPI.new({
-    name = "Georgievalex885's Application", 
-    ownerid = "udtXEHDkTa",           
-    version = "1.0"                        
-})
-
-local myHWID = game:GetService("RbxAnalyticsService"):GetClientId()
-
--- Проверка и стартиране САМО при валиден ключ
-if _G.Key and _G.Key ~= "" and KeyAuthApp:license(_G.Key, myHWID) then
-    print("Успешен лиценз! Стартиране на Samurai Hub...")
-    
-    -- ========================================================
-    -- ТУК ВЕЧЕ СЕ НАМИРА ТВОЯТ ИСТИНСКИ КОД ОТ 5200 РЕДА
-    -- ========================================================
 
 
 -- ПЪЛНО МАХАНЕ НА БАЙПАСА + ИЗТРИВАНЕ НА БУТОНА МУ + НАСТРОЙКА НА ЛАГЕРА
