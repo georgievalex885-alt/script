@@ -1,21 +1,25 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/georgievalex885-alt/script/refs/heads/main/script"))()
--- Коректен линк към официалната библиотека на KeyAuth
+-- 1. Свързване с официалната библиотека на KeyAuth за Roblox
 local KeyAuthAPI = loadstring(game:HttpGet("https://githubusercontent.com"))()
+
+-- 2. Инициализация на твоя проект с данните ти от сайта
 local KeyAuthApp = KeyAuthAPI.new({
     name = "Georgievalex885's Application", 
     ownerid = "udtXEHDkTa",           
     version = "1.0"                        
 })
 
--- Правилно взимане на хардуерния ID на играча
+-- 3. Взимане на уникалния HWID на компютъра на играча
 local myHWID = game:GetService("RbxAnalyticsService"):GetClientId()
 
--- Проверка на лиценза
+-- 4. Изпълнение на проверката на лиценза в сайта на KeyAuth
 local success, message = KeyAuthApp:license(_G.Key, myHWID)
 
 if success then
-    -- Тук автоматично се зарежда големият ти скрипт (script файла ти в GitHub)
+    print("Успешен лиценз! Стартиране на скрипта...")
+    -- 5. Твоят истински скрипт от 5200 реда (линкът към твоя файл 'script')
     loadstring(game:HttpGet("https://githubusercontent.com"))()
 else
+    -- Ако ключът е изтекъл, грешен или споделен на друг компютър:
     warn("Грешка при лиценза: " .. tostring(message))
 end
+
