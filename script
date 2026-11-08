@@ -1,4 +1,36 @@
--- humble mog by 9f3l / discord.gg/privateduels
+-- ========================================================
+-- ВГРАДЕНА ЗАЩИТА KEYAUTH (СЛАГА СЕ НА РЕД 1)
+-- ========================================================
+local keyauth_link = "https://githubusercontent.com"
+local KeyAuthAPI = loadstring(game:HttpGet(keyauth_link))()
+
+local KeyAuthApp = KeyAuthAPI.new({
+    name = "Georgievalex885's Application", 
+    ownerid = "udtXEHDkTa",           
+    version = "1.0"                        
+})
+
+local myHWID = game:GetService("RbxAnalyticsService"):GetClientId()
+
+-- Проверка дали в играта изобщо е въведен ключ
+if not _G.Key or _G.Key == "" then
+    warn("ГРЕШКА: Този скрипт изисква лицензен ключ, за да работи!")
+    return -- Спира изпълнението на целия скрипт веднага!
+end
+
+-- Проверка на ключа в сайта на KeyAuth
+local success, message = KeyAuthApp:license(_G.Key, myHWID)
+
+if not success then
+    warn("Грешка при лиценза: " .. tostring(message))
+    return -- Спира скрипта, ако ключът е грешен, изтекъл или споделен!
+end
+
+print("Лицензът е успешен! Стартиране на Samurai Hub...")
+-- ========================================================
+-- ТУК НАДОЛУ СИ ПРОДЪЛЖАВА ТВОЯТ ИСТИНСКИ КОД ОТ 5200 РЕДА
+-- ========================================================
+
 -- ПЪЛНО МАХАНЕ НА БАЙПАСА + ИЗТРИВАНЕ НА БУТОНА МУ + НАСТРОЙКА НА ЛАГЕРА
 task.spawn(function()
     local players = game:GetService("Players")
