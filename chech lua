@@ -1,0 +1,19 @@
+local KeyAuthAPI = loadstring(game:HttpGet("https://githubusercontent.com"))()
+local KeyAuthApp = KeyAuthAPI.new({
+    name = "Georgievalex885's Application", 
+    ownerid = "udtXEHDkTa",           
+    version = "1.0"                        
+})
+
+-- Вземане на уникалния HWID на играча от Roblox
+local myHWID = game:GetService("RbxAnalyticsService"):GetClientId()
+
+-- Изпълнение на проверката с добавен HWID
+local success, message = KeyAuthApp:license(_G.Key, myHWID)
+
+if success then
+    -- ТУК СЛАГАШ RAW ЛИНКА, КОЙТО КОПИРА ОТ СТЪПКА 1 (Твоите 5200 реда)
+    loadstring(game:HttpGet("ТУК_ПОСТАВИ_RAW_ЛИНКА_ОТ_СТЪПКА_1"))()
+else
+    warn("Грешка при лиценза: " .. tostring(message))
+end
