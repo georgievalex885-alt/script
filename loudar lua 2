@@ -1,0 +1,21 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/georgievalex885-alt/script/refs/heads/main/script"))()
+-- Коректен линк към официалната библиотека на KeyAuth
+local KeyAuthAPI = loadstring(game:HttpGet("https://githubusercontent.com"))()
+local KeyAuthApp = KeyAuthAPI.new({
+    name = "Georgievalex885's Application", 
+    ownerid = "udtXEHDkTa",           
+    version = "1.0"                        
+})
+
+-- Правилно взимане на хардуерния ID на играча
+local myHWID = game:GetService("RbxAnalyticsService"):GetClientId()
+
+-- Проверка на лиценза
+local success, message = KeyAuthApp:license(_G.Key, myHWID)
+
+if success then
+    -- Тук автоматично се зарежда големият ти скрипт (script файла ти в GitHub)
+    loadstring(game:HttpGet("https://githubusercontent.com"))()
+else
+    warn("Грешка при лиценза: " .. tostring(message))
+end
